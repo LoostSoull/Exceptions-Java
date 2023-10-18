@@ -40,6 +40,8 @@ public class Program {
 			System.out.println("Error in reservation: " + e.getMessage());
 		} catch (ParseException e) {
 			System.out.println("Error in reservation: Ilegal date format ");
+		}catch (RuntimeException e) {
+			System.out.println("Unexpeted Error ");
 		}
 		sc.close();
 	}

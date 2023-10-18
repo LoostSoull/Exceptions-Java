@@ -14,7 +14,7 @@ public class Reservation {
 	
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
-	public Reservation(int roomNumber, Date checkIn, Date checkOut) throws DomainException {
+	public Reservation(int roomNumber, Date checkIn, Date checkOut)  {
 		
 		if (!checkOut.after(checkIn)) {
 			throw new DomainException ("Error in reservation: Check-out date must be after check-in date");
@@ -42,7 +42,7 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff,TimeUnit.MILLISECONDS);
 	}
 	
-	public String updatDates(Date checkIn , Date checkOut) throws DomainException {
+	public String updatDates(Date checkIn , Date checkOut)  {
 		
 		 Date now = new Date();
 	     if(checkIn.before(now) || checkOut.before(now)) {
